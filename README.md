@@ -11,11 +11,11 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 ![As of 2022-12-11](images/device-pic1.jpg)  
 ![As of 2022-12-11](images/device-pic2.jpg)  
 
-| Number | Description              
-| :-: | :-------------------------- |
-|  1  | USB                         |
-|  2  | USB 2                       |
-|  3  | USB 3                       |
+| Number | Description | Number | Description | Number | Description |             
+| :-: | :-------------------------- | :-: | :-------------------------- | :-: | :-------------------------- |
+|  1  | USB                         |  2  | USB 2                       |  2  | USB 2                       |
+|  2  | USB 2                       |  2  | USB 2                       |  2  | USB 2                       |
+|  3  | USB 3                       |  2  | USB 2                       |  2  | USB 2                       |
 |  15 | Battery connector           |
 |  5  | LCD-FPC                     |
 |  6  | Touch CTP-FPC               |
