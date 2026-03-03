@@ -1,4 +1,6 @@
+<span style="color:red">
 #  U N D E R  -----  C O N S T R A C T I O N    ! !!!
+</span>
 
 # JC8012P4A1_BSP_ESP32P4
 Board Support Package (BSP) for JC8012P4A1 (ESP32-P4). Provides support for display (JD9365 MIPI-DSI), touch (GSL3680), audio (ES8311), and co-processor (ESP32-C6). Includes full LVGL9.x integration with PPA hardware acceleration for high-performance graphics.
@@ -22,7 +24,8 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 |  7  | ESP32-C6                    |  15 | Battery connector (3,7V)    |  23 | BOOT button P4              |
 |  8  | Speaker connector           |  16 | Power on switch             |  24 | UART-USB chip (CH340)       |
 
-
+<details>
+<summary>Click to view details</summary>
 | No. | Key Component                       | Description                                                   |
 | :-: |  :--------------------------------- |  :----------------------------------------------------------- |
 | 1 | USB Full Speed  (USB1 P4) | USB Type-C port that supports USB 2.0 Full-speed data rate. It can be used as the power supply interface for the development board and as a communication interface. |
@@ -41,6 +44,7 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 | 24 | UART-USB chip (CH340)  | Connected to UART0 ESP32-P4 |
 |  | ES8311 chip | Audio Codec Chip. ES8311 is a low-power mono audio codec chip. It includes a single-channel ADC, a single-channel DAC, a low-noise pre-amplifier, a headphone driver, digital sound effects, analog mixing, and gain functions. It interfaces with the ESP32-P4 chip over I2S and I2C buses to provide hardware audio processing independent of the audio application. |
 |  | NS4150B chip | Audio power amplifier Chip. 3 W mono Class D audio power amplifier that amplifies audio signals from the audio codec chip to drive speakers.|
+</details>
 
 ![diagram](images/diagram.png)  
 
