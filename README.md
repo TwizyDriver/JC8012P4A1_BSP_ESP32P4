@@ -1,12 +1,14 @@
-<span style="color:red">
-#  U N D E R  -----  C O N S T R A C T I O N    ! !!!
-</span>
+
+#  `U N D E R  -----  C O N S T R A C T I O N    !!!`
+
+🔴 🟢 🔵 
+
 
 # JC8012P4A1_BSP_ESP32P4
-Board Support Package (BSP) for JC8012P4A1 (ESP32-P4). Provides support for display (JD9365 MIPI-DSI), touch (GSL3680), audio (ES8311), and co-processor (ESP32-C6). Includes full LVGL9.x integration with PPA hardware acceleration for high-performance graphics.
+🟢 Board Support Package (BSP) for JC8012P4A1 (ESP32-P4). Provides support for display (JD9365 MIPI-DSI), touch (GSL3680), audio (ES8311), and co-processor (ESP32-C6). Includes full LVGL9.x integration with PPA hardware acceleration for high-performance graphics.
 
 ## Overview
-JC8012P4A1 is a multimedia development board based on the ESP32-P4 chip. ESP32-P4 chip features a dual-core `RISC-V` processor and supports up to 32 MB PSRAM. In addition, ESP32-P4 supports USB 2.0 specification, MIPI-CSI/DSI, H264 Encoder, and various other peripherals. With all of its outstanding features, the board is an ideal choice for developing low-cost, high-performance, low-power network-connected audio and video products.
+🔵 JC8012P4A1 is a multimedia development board based on the ESP32-P4 chip. ESP32-P4 chip features a dual-core `RISC-V` processor and supports up to 32 MB PSRAM. In addition, ESP32-P4 supports USB 2.0 specification, MIPI-CSI/DSI, H264 Encoder, and various other peripherals. With all of its outstanding features, the board is an ideal choice for developing low-cost, high-performance, low-power network-connected audio and video products.
 The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-Fi and Bluetooth module of the board. The board also includes a 10.1-inch capacitive touch screen with a resolution of 1280 x 800 and a 2MP camera with MIPI CSI, enriching the user interaction experience. 
 
 ## Device Photos
@@ -75,7 +77,7 @@ ESP-Hosted-MCU library is dependent on ESP-IDF, [esp_wifi_remote](https://github
 | C6_IO2        |       IO2 |              GPIO6 |         |  Wakeup |
 
 ## Flashing ESP32-C6 (Optional)
-Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so this step is optional unless you need to update the firmware. However, it is recommended to upgrade to the latest slave firmware to get updated features and performance optimizations.
+🔴  Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so this step is optional unless you need to update the firmware. However, it is recommended to upgrade to the latest slave firmware to get updated features and performance optimizations.
 
 * You'll need an ESP-Prog or similar UART adapter for serial flashing.
 * Connect ESP-Prog to the `CN5` header:
