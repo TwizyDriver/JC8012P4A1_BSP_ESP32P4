@@ -62,8 +62,8 @@ ESP-Hosted-MCU library is dependent on ESP-IDF, [esp_wifi_remote](https://github
 ## Flashing ESP32-C6 (Optional)
 Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so this step is optional unless you need to update the firmware. However, it is recommended to upgrade to the latest slave firmware to get updated features and performance optimizations.
 
--You'll need an ESP-Prog or similar UART adapter for serial flashing.
--Connect ESP-Prog to the `PROG_C6` header:
+* You'll need an ESP-Prog or similar UART adapter for serial flashing.
+* Connect ESP-Prog to the `CN5` header:
 
     | ESP-Prog | CN5_C6 | Notes                   |
     | ---      | ---     | ---                     |
@@ -74,4 +74,4 @@ Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so t
     | GND      | GND     |                         |
     | ESP\_IO0 | IO0     |                         |
 
--Put the ESP32-P4 into bootloader mode to prevent interference:
+* Put the ESP32-P4 into bootloader mode to prevent interference:
