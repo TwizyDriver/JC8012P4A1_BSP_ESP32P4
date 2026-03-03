@@ -5,7 +5,7 @@ Board Support Package (BSP) for JC8012P4A1 (ESP32-P4). Provides support for disp
 
 ## Overview
 JC8012P4A1 is a multimedia development board based on the ESP32-P4 chip. ESP32-P4 chip features a dual-core `RISC-V` processor and supports up to 32 MB PSRAM. In addition, ESP32-P4 supports USB 2.0 specification, MIPI-CSI/DSI, H264 Encoder, and various other peripherals. With all of its outstanding features, the board is an ideal choice for developing low-cost, high-performance, low-power network-connected audio and video products.
-The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-Fi and Bluetooth module of the board. The board also includes a 10-inch capacitive touch screen with a resolution of 1280 x 800 and a 2MP camera with MIPI CSI, enriching the user interaction experience. 
+The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-Fi and Bluetooth module of the board. The board also includes a 10.1-inch capacitive touch screen with a resolution of 1280 x 800 and a 2MP camera with MIPI CSI, enriching the user interaction experience. 
 
 ## Device Photos
 ![front view](images/device-pic1.jpg)  
@@ -58,6 +58,17 @@ ESP-Hosted-MCU library is dependent on ESP-IDF, [esp_wifi_remote](https://github
 * This modular design allows any MCU to be used as the Host, and any ESP chip with Wi-Fi and/or Bluetooth to be used as the Hosted co-processor. The RPC calls can also be extended to provide any function required by the Host, as long as the co-processor can support it.
 * The RPCs implemented are [listed in this document](https://github.com/espressif/esp-hosted-mcu/blob/main/docs/implemented_rpcs.md), including the ESP-Hosted release version that implements the RPCs.
 
+### SDIO 4-bit transport Host <-> Slave
+| SDIO Function | ESP32-C6 GPIO | ESP32-P4 GPIO | Pull-Up | Description |
+| :---          |      ---: |          ---: | :---: | :--- |
+| SD2_CLK       |      IO18 |             GPIO18 |   51k   |   |
+| SD2_CMD       |      IO19 |             GPIO19 |   51k   |   |
+| SD2_D0        |      IO20 |             GPIO14 |   51k   |   |
+| SD2_D1        |      IO21 |             GPIO15 |   51k   |   |
+| SD2_D2        |      IO22 |             GPIO16 |   51k   |   |
+| SD2_D3        |      IO23 |             GPIO17 |   51k   |   |
+| C6_CHIP_PU    |       EN  |             GPIO54 |   10k   | Reset C6  |
+| C6_IO2        |       IO2 |              GPIO6 |         |  Wakeup |
 
 ## Flashing ESP32-C6 (Optional)
 Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so this step is optional unless you need to update the firmware. However, it is recommended to upgrade to the latest slave firmware to get updated features and performance optimizations.
@@ -75,3 +86,22 @@ Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so t
     | ESP\_IO0 | IO0     |                         |
 
 * Put the ESP32-P4 into bootloader mode to prevent interference:
+
+## TF Card pin assignments
+
+On ESP32-P4, SDMMC Slot 0 GPIO pins cannot be customized. The GPIO assigned in the example should not be modified.
+
+The table below lists the default pin assignments.
+
+ESP32-P4 pin  | SD card pin | Notes
+--------------|-------------|------------
+GPIO43        | CLK         | 10k pullup
+GPIO44        | CMD         | 10k pullup
+GPIO39        | D0          | 10k pullup
+GPIO40        | D1          | not used in 1-line SD mode; 10k pullup in 4-line mode
+GPIO41        | D2          | not used in 1-line SD mode; 10k pullup in 4-line mode
+GPIO42        | D3          | not used in 1-line SD mode, but card's D3 pin must have a 10k pullup
+
+### 4-line and 1-line SD modes
+
+By default, this example uses 4 line SD mode, utilizing 6 pins: CLK, CMD, D0 - D3. It is possible to use 1-line mode (CLK, CMD, D0) by changing "SD/MMC bus width". Note that even if card's D3 line is not connected to the ESP chip, it still has to be pulled up, otherwise the card will go into SPI protocol mode.
