@@ -10,7 +10,17 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 ## Device Photos
 ![As of 2022-12-11](images/device-pic1.jpg)  
 ![As of 2022-12-11](images/device-pic2.jpg)  
+
+        | Screen Adapter Board | ESP32-P4X-Function-EV-Board |
+        | -------------------- | -------------------------- |
+        | 5V (any one)         | 5V (any one)               |
+        | GND (any one)        | GND (any one)              |
+        | PWM                  | GPIO26                     |
+        | LCD_RST              | GPIO27                     |
+
+
 | --- | --------------- |
 |  1  | USB             |
 |  2  | USB 2           |
 |  3  | USB 3           |
+
