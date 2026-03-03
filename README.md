@@ -59,8 +59,8 @@ ESP-Hosted-MCU library is dependent on ESP-IDF, [esp_wifi_remote](https://github
 * The RPCs implemented are [listed in this document](https://github.com/espressif/esp-hosted-mcu/blob/main/docs/implemented_rpcs.md), including the ESP-Hosted release version that implements the RPCs.
 
 ### SDIO 4-bit transport Host <-> Slave
-| SDIO Function | ESP32-C6 GPIO | ESP32-P4 GPIO | Pull-Up | Description |
-| :---          |      ---: |          ---: | :---: | :--- |
+| SDIO Function | ESP32-C6 GPIO | ESP32-P4 GPIO | Pullup | Description |
+| :---          |      ---: |               ---: |   :---: | :--- |
 | SD2_CLK       |      IO18 |             GPIO18 |   51k   |   |
 | SD2_CMD       |      IO19 |             GPIO19 |   51k   |   |
 | SD2_D0        |      IO20 |             GPIO14 |   51k   |   |
@@ -76,7 +76,7 @@ Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so t
 * You'll need an ESP-Prog or similar UART adapter for serial flashing.
 * Connect ESP-Prog to the `CN5` header:
 
-    | ESP-Prog | CN5_C6 | Notes                   |
+    | ESP-Prog | CN5_C6  | Notes                   |
     | ---      | ---     | ---                     |
     | ESP\_EN  | EN      |                         |
     | ESP\_TXD | TXD     |                         |
@@ -102,6 +102,12 @@ GPIO40        | D1          | not used in 1-line SD mode; 10k pullup in 4-line m
 GPIO41        | D2          | not used in 1-line SD mode; 10k pullup in 4-line mode
 GPIO42        | D3          | not used in 1-line SD mode, but card's D3 pin must have a 10k pullup
 
-### 4-line and 1-line SD modes
-
 By default, this example uses 4 line SD mode, utilizing 6 pins: CLK, CMD, D0 - D3. It is possible to use 1-line mode (CLK, CMD, D0) by changing "SD/MMC bus width". Note that even if card's D3 line is not connected to the ESP chip, it still has to be pulled up, otherwise the card will go into SPI protocol mode.
+
+## I2C interface
+
+## I2S audio interface
+
+## WS2812 on-board RGB led
+
+## Battery charge level
