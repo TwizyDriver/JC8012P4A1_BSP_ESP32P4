@@ -43,3 +43,35 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 |  | NS4150B chip | Audio power amplifier Chip. 3 W mono Class D audio power amplifier that amplifies audio signals from the audio codec chip to drive speakers.|
 
 ![diagram](images/diagram.png)  
+
+The board includes an on-board ESP32-C6 module that comes pre-flashed with ESP-Hosted-MCU slave firmware (v0.0.6). This provides Wi-Fi/Bluetooth connectivity to the on-board ESP32-P4, which acts as the host.
+The ESP32-P4 can be used as a host MCU with an on-board ESP32-C6 as co-processor, already connected via SDIO as transport.
+
+## Communication P4 with C6
+[ESP-Hosted-MCU](https://github.com/espressif/esp-hosted-mcu/tree/main) is an open-source solution that allows you to use Espressif  modules (ESP32-C6) as a communication co-processor. This solution provides wireless connectivity (Wi-Fi and Bluetooth) to the host microprocessor (ESP32-P4).
+ESP-Hosted-MCU library is dependent on ESP-IDF, [esp_wifi_remote](https://github.com/espressif/esp-wifi-remote/) and [protobuf-c](https://github.com/protobuf-c/protobuf-c)
+### How it works 
+##### ESP32-P4 Host MCU
+##### ESP32-C6 Hosted Co-Processor
+- Host extends the capabilities of the Hosted co-processor through Remote Procedure Calls (RPCs). The Host MCU sends these RPC commands to the Hosted co-processor using a reliable communication bus, like SPI, SDIO, or UART. The Hosted co-processor then handles the RPC and provides the requested functionality to the Host MCU.
+- The data (network or Bluetooth) is packaged efficiently at the transport layer to minimize overhead and delays when passing between the Host and co-processor.
+- This modular design allows any MCU to be used as the Host, and any ESP chip with Wi-Fi and/or Bluetooth to be used as the Hosted co-processor. The RPC calls can also be extended to provide any function required by the Host, as long as the co-processor can support it.
+- The RPCs implemented are [listed in this document](https://github.com/espressif/esp-hosted-mcu/blob/main/docs/implemented_rpcs.md), including the ESP-Hosted release version that implements the RPCs.
+
+
+## Flashing ESP32-C6 (Optional)
+Note: The ESP32-C6 comes pre-flashed with ESP-Hosted slave firmware v0.0.6, so this step is optional unless you need to update the firmware. However, it is recommended to upgrade to the latest slave firmware to get updated features and performance optimizations.
+
+-You'll need an ESP-Prog or similar UART adapter for serial flashing.
+-Connect ESP-Prog to the `PROG_C6` header:
+
+    | ESP-Prog | CN5_C6 | Notes                   |
+    | ---      | ---     | ---                     |
+    | ESP\_EN  | EN      |                         |
+    | ESP\_TXD | TXD     |                         |
+    | ESP\_RXD | RXD     |                         |
+    | VDD      | -       | **Do not connect**      |
+    | GND      | GND     |                         |
+    | ESP\_IO0 | IO0     |                         |
+
+-Put the ESP32-P4 into bootloader mode to prevent interference:
