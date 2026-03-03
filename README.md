@@ -27,7 +27,7 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
     * **Step 4**. Turn on the power switch of the board.
 
 
-| Header 1 | Header 2 | Header 3 |
+| Header 1 | Header 2 |
 | --- | --------------- |
 |  1  | USB             |
 |  2  | USB 2           |
