@@ -11,24 +11,8 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 ![As of 2022-12-11](images/device-pic1.jpg)  
 ![As of 2022-12-11](images/device-pic2.jpg)  
 
-
-* Please refer to the following steps for the connection:
-    * **Step 1**. According to the table below, connect the pins on the back of the screen adapter board to the corresponding pins on the development board.
-
-        | Screen Adapter Board | ESP32-P4X-Function-EV-Board |
-        | -------------------- | -------------------------- |
-        | 5V (any one)         | 5V (any one)               |
-        | GND (any one)        | GND (any one)              |
-        | PWM                  | GPIO26                     |
-        | LCD_RST              | GPIO27                     |
-
-    * **Step 2**. Connect the FPC of LCD through the `MIPI_DSI` interface.
-    * **Step 3**. Use a USB-C cable to connect the `USB-UART` port to a PC (Used for power supply and viewing serial output).
-    * **Step 4**. Turn on the power switch of the board.
-
-
-| Header 1 | Header 2 |
-| --- | --------------- |
+| Number | Description |
+| :---: | :--------------- |
 |  1  | USB             |
 |  2  | USB 2           |
 |  3  | USB 3           |
