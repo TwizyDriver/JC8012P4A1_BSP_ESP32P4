@@ -11,16 +11,28 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 ![As of 2022-12-11](images/device-pic1.jpg)  
 ![As of 2022-12-11](images/device-pic2.jpg)  
 
-| Number | Description | Number | Description | Number | Description |             
+| No. | Description                 | No. | Description                 | No. | Description                 |             
 | :-: | :-------------------------- | :-: | :-------------------------- | :-: | :-------------------------- |
-|  1  | USB                         |  2  | USB 2                       |  2  | USB 2                       |
-|  2  | USB 2                       |  2  | USB 2                       |  2  | USB 2                       |
-|  3  | USB 3                       |  2  | USB 2                       |  2  | USB 2                       |
-|  15 | Battery connector           |
-|  5  | LCD-FPC                     |
-|  6  | Touch CTP-FPC               |
-|  7  | ESP32-C6                    |
+|  1  | USB Full Speed  P4          |  9  | Microphone                  |  17 | CN5                         |
+|  2  | USB High Speed  P4          |  10 | EXTEND1 connector           |  18 | CN4 (I2C P4)                |
+|  3  | USB from UART0 P4           |  11 | Reset button P4             |  19 | 25Q128  PSRAM P4            |
+|  4  | CN2 (UART0  P4)             |  12 | TF Card Holder              |  20 | ESP32-P4                    |
+|  5  | LCD-FPC                     |  13 | ExXTEND2 connector          |  21 | RTC chip                    |
+|  6  | Touch CTP-FPC               |  14 | Camera FPC                  |  22 | RTC battery                 |
+|  7  | ESP32-C6                    |  15 | Battery connector (3,7V)    |  23 | BOOT button P4              |
+|  8  | Speaker connector           |  16 | Power on switch             |  24 | UART-USB chip (CH340)       |
 
 
+| No. | Key Component                       | Description                                                   |
+| :-: |  :--------------------------------- |  :----------------------------------------------------------- |
+| 1 | USB Full Speed  P4 | USB Type-C port that supports USB 2.0 Full-speed data rate. It can be used as the power supply interface for the development board and as a communication interface. |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
+| 2 | Key Component | Description |
 
 Text
