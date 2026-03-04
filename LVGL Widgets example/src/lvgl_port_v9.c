@@ -10,10 +10,7 @@ https://github.com/profi-max
 
 *******************************************************************************/
 
-// #define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
-
-
- #include <Arduino.h>
+#include <Arduino.h>
 #include "soc/soc_caps.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
@@ -558,7 +555,6 @@ static void touchpad_read(lv_indev_t *indev_drv, lv_indev_data_t *data)
         data->point.y = touchpad_y;
         data->state = LV_INDEV_STATE_PRESSED;
         
-//        ESP_LOGD(TAG, "Touch position: %d,%d", touchpad_x, touchpad_y);
     } else {
         data->state = LV_INDEV_STATE_RELEASED;
     }
@@ -603,12 +599,9 @@ static void lvgl_port_task(void *arg)
 {
     ESP_LOGI(TAG, "LVGL task running on core %d", xPortGetCoreID()); 
 
- //   ESP_LOGD(TAG, "Starting LVGL task");
-
     lvgl_port_task_param_t *param = (lvgl_port_task_param_t *)arg;
  
     lv_init();
-
  
     ESP_ERROR_CHECK(tick_init());
 
@@ -618,9 +611,6 @@ static void lvgl_port_task(void *arg)
     if (param->tp_handle) {
         lv_indev_t *indev = indev_init(param->tp_handle);
         assert(indev);
-
-
-        
 
 #if EXAMPLE_LVGL_PORT_ROTATION_90
         esp_lcd_touch_set_swap_xy(param->tp_handle, true);
@@ -682,7 +672,6 @@ IRAM_ATTR static bool mipi_dsi_lcd_on_vsync_event(esp_lcd_panel_handle_t panel, 
 esp_err_t lvgl_port_init(esp_lcd_panel_handle_t lcd_handle, esp_lcd_touch_handle_t tp_handle, lvgl_port_interface_t interface)
 {
     ESP_LOGI(TAG, "Initialize LVGL task");
-    
 
     lvgl_port_task_param_t lvgl_task_param = {
         .lcd_handle = lcd_handle,
@@ -750,8 +739,6 @@ esp_err_t lvgl_port_init(esp_lcd_panel_handle_t lcd_handle, esp_lcd_touch_handle
 bool lvgl_port_lock(int timeout_ms)
 {
     assert(lvgl_mux && "lvgl_port_init must be called first");
-//    ESP_LOGI(TAG, "Port LOCKED");
-
     const TickType_t timeout_ticks = (timeout_ms < 0) ? portMAX_DELAY : pdMS_TO_TICKS(timeout_ms);
     return xSemaphoreTakeRecursive(lvgl_mux, timeout_ticks) == pdTRUE;
 }
@@ -760,7 +747,6 @@ bool lvgl_port_lock(int timeout_ms)
 void lvgl_port_unlock(void)
 {
     assert(lvgl_mux && "lvgl_port_init must be called first");
-//   ESP_LOGI(TAG, "Port UNLOCKED");
     xSemaphoreGiveRecursive(lvgl_mux);
 }
 

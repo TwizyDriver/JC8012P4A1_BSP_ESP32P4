@@ -6,9 +6,6 @@
 
 #include "soc/soc_caps.h"
 
-
-#define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
-
 #if SOC_MIPI_DSI_SUPPORTED
 #include "esp_check.h"
 #include "esp_log.h"
