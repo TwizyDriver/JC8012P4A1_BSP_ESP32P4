@@ -24,7 +24,7 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 |  5  | LCD-FPC (MIPI-DSI P4)       |  13 | EXTEND2 connector           |  21 | RTC chip (RX8025T)          |
 |  6  | Touch CTP-FPC               |  14 | Camera FPC (MIPI-CSI P4)    |  22 | RTC battery                 |
 |  7  | ESP32-C6                    |  15 | Battery connector (3,7V)    |  23 | BOOT button P4              |
-|  8  | Speaker connector           |  16 | Power on switch             |  24 | UART-USB chip (CH340)       |
+|  8  | Speaker connector           |  16 | Power button                |  24 | UART-USB chip (CH340)       |
 
 <details>
 <summary>Click to view details</summary>
@@ -41,6 +41,7 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 | 9 | Microphone | Onboard microphone connected to the interface of Audio Codec Chip. |
 | 12 | TF Card Holder | MicroSD Card Slot supports a MicroSD card in 4-bit mode and can store or play audio files from the MicroSD card.|
 | 15 | Battery connector (3,7V) | Li-Ion battery port. |
+| 16 | Power button| Li-Ion battery port. | Short press: enables / wakes the device. Long press: disables the device.
 | 17 | CN5 (ESP-Prog for ESP32-C6) | The connector can be used with ESP-Prog or other UART tools to flash firmware onto the ESP32-C6 module. |
 | 19 | W25Q128 SPI Flash chip | The 16 MB flash is connected to the ESP32-P4 chip via the SPI interface. (PSRAM) |
 | 21 | RTC chip (RX8025T) | Real Time Clock chip |
@@ -56,6 +57,8 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 
 The board includes an on-board ESP32-C6 module that comes pre-flashed with ESP-Hosted-MCU slave firmware (v0.0.6). This provides Wi-Fi/Bluetooth connectivity to the on-board ESP32-P4, which acts as the host.
 The ESP32-P4 can be used as a host MCU with an on-board ESP32-C6 as co-processor, already connected via SDIO as transport.
+
+[**Click to view full schematic**](Docs/5-Schematic/README.md)
 
 ## Communication P4 with C6
 [ESP-Hosted-MCU](https://github.com/espressif/esp-hosted-mcu/tree/main) is an open-source solution that allows you to use Espressif  modules (ESP32-C6) as a communication co-processor. This solution provides wireless connectivity (Wi-Fi and Bluetooth) to the host microprocessor (ESP32-P4).
@@ -121,3 +124,15 @@ By default, this board uses 4 line SD mode, utilizing 6 pins: CLK, CMD, D0 - D3.
 ## WS2812 on-board RGB led
 
 ## Battery charge level
+Battery voltage is measured using a **passive resistor divider**:
+
+- R2 = 68 kΩ (BAT+ → ADC)
+- R6 = 100 kΩ (ADC → GND)
+- ADC pin: **GPIO52**
+
+Divider ratio:
+Vadc = Vbat × (100 / (68 + 100)) ≈ 0.595
+Multiplier ≈ 1.68
+
+This keeps ADC voltage safely below 3.3 V at full charge (4.2 V).
+
