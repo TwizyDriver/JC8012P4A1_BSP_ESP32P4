@@ -1,6 +1,6 @@
 # シャオジー AI チャットボット
 
-([中文](README.md) | [English](README_en.md) | 日本語)
+([中文](README_cn.md) | [English](README.md) | 日本語)
 
 ## プロジェクト紹介
 
