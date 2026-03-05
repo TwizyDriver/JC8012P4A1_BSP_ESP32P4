@@ -108,12 +108,12 @@ The table below lists the default pin assignments.
 
 ESP32-P4 pin  | SD card pin | Notes
 --------------|-------------|------------
-GPIO43        | CLK         | 10k pullup
-GPIO44        | CMD         | 10k pullup
-GPIO39        | D0          | 10k pullup
-GPIO40        | D1          | not used in 1-line SD mode; 10k pullup in 4-line mode
-GPIO41        | D2          | not used in 1-line SD mode; 10k pullup in 4-line mode
-GPIO42        | D3          | not used in 1-line SD mode, but card's D3 pin must have a 10k pullup
+GPIO43        | SD_CLK      | 5.1k pullup
+GPIO44        | SD_CMD      | 5.1k pullup
+GPIO39        | SD_DATA0    | 5.1k pullup
+GPIO40        | SD_DATA1    | not used in 1-line SD mode; 5.1k pullup in 4-line mode
+GPIO41        | SD_DATA2    | not used in 1-line SD mode; 5.1k pullup in 4-line mode
+GPIO42        | SD_DATA3    | not used in 1-line SD mode, but card's D3 pin must have a 5.1k pullup
 
 By default, this board uses 4 line SD mode, utilizing 6 pins: CLK, CMD, D0 - D3. It is possible to use 1-line mode (CLK, CMD, D0) by changing "SD/MMC bus width". Note that even if card's D3 line is not connected to the ESP chip, it still has to be pulled up, otherwise the card will go into SPI protocol mode.
 
