@@ -62,13 +62,10 @@ esp_err_t bsp_lcd_brightness_init(void)
 }
 
 //==========================================================================================================================
-esp_err_t bsp_lcd_brightness_set(int brightness_percent)
+esp_err_t bsp_lcd_brightness_set(uint8_t brightness_percent)
 {
     if (brightness_percent > 100) {
         brightness_percent = 100;
-    }
-    if (brightness_percent < 0) {
-        brightness_percent = 0;
     }
 
     ESP_LOGI(TAG, "Setting LCD backlight: %d%%", brightness_percent);
