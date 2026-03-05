@@ -106,32 +106,33 @@ On ESP32-P4, SDMMC Slot 0 GPIO pins cannot be customized. The GPIO assigned in t
 
 The table below lists the default pin assignments.
 
-ESP32-P4 pin  | SD card pin | Notes
---------------|-------------|------------
-GPIO43        | SD_CLK      | 5.1k pullup
-GPIO44        | SD_CMD      | 5.1k pullup
-GPIO39        | SD_DATA0    | 5.1k pullup
-GPIO40        | SD_DATA1    | not used in 1-line SD mode; 5.1k pullup in 4-line mode
-GPIO41        | SD_DATA2    | not used in 1-line SD mode; 5.1k pullup in 4-line mode
-GPIO42        | SD_DATA3    | not used in 1-line SD mode, but card's D3 pin must have a 5.1k pullup
+ESP32-P4 | SD card pin | Notes
+---------|-------------|------------
+GPIO43   | SD_CLK      | 5.1k pullup
+GPIO44   | SD_CMD      | 5.1k pullup
+GPIO39   | SD_DATA0    | 5.1k pullup
+GPIO40   | SD_DATA1    | not used in 1-line SD mode; 5.1k pullup in 4-line mode
+GPIO41   | SD_DATA2    | not used in 1-line SD mode; 5.1k pullup in 4-line mode
+GPIO42   | SD_DATA3    | not used in 1-line SD mode, but card's D3 pin must have a 5.1k pullup
 
 By default, this board uses 4 line SD mode, utilizing 6 pins: CLK, CMD, D0 - D3. It is possible to use 1-line mode (CLK, CMD, D0) by changing "SD/MMC bus width". Note that even if card's D3 line is not connected to the ESP chip, it still has to be pulled up, otherwise the card will go into SPI protocol mode.
 
 ## I2C interface
-ESP32-P4 pin    | I2C       | RTC        | ES8311 audio
-----------------|:---------:|------------|--------------
-GPIO7           | I2C_SDA   |   RTC_DAT  | ES_I2C_SDA     
-GPIO8           | I2C_SCL   |   RTC_CLK  | ES_I2C_CLK
+
+ESP32-P4 | Touch I2C | RTC        | ES8311 audio | Camera FPC5 | CN4 pin | FPC3 Expand pin | Pullup   |
+---------|:---------:|------------|------------- | ----------- | ------- | --------------- | -------- |
+GPIO7    | I2C_SDA   |   RTC_DAT  | ES_I2C_SDA   |  13         | 3       | 11              | R43 2.2k |
+GPIO8    | I2C_SCL   |   RTC_CLK  | ES_I2C_CLK   |  14         | 4       | 12              | R44 2.2k |
 
 ## I2S audio interface
 
-| ESP32-P4 pin  | ES8311 audio     
-| --------------|-------------
-| GPIO13        | CODEC_I2S0_MCLK
-| GPIO12        | CODEC_I2S0_SCLK
-| GPIO11        | CODEC_I2S0_SDOUT
-| GPIO10        | CODEC_I2S0_LRCK
-| GPIO9         | CODEC_I2S0_DSDIN
+| ESP32-P4 | ES8311 audio     
+| ---------|-------------
+| GPIO13   | CODEC_I2S0_MCLK
+| GPIO12   | CODEC_I2S0_SCLK
+| GPIO11   | CODEC_I2S0_SDOUT
+| GPIO10   | CODEC_I2S0_LRCK
+| GPIO9    | CODEC_I2S0_DSDIN
 
 ## WS2812 on-board RGB led
 
