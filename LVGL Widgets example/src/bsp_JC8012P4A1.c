@@ -129,8 +129,8 @@ void bsp_lvgl_init(void)
     // Init gsl3680 touch
        i2c_config_t i2c_conf = {
         .mode = I2C_MODE_MASTER,
-        .sda_io_num = (gpio_num_t)TP_I2C_SDA,
-        .scl_io_num = (gpio_num_t)TP_I2C_SCL,
+        .sda_io_num = I2C_SDA,
+        .scl_io_num = I2C_SCL,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
     };
@@ -147,8 +147,8 @@ void bsp_lvgl_init(void)
     esp_lcd_touch_config_t tp_cfg = {
         .x_max = LVGL_PORT_H_RES,
         .y_max = LVGL_PORT_V_RES,
-        .rst_gpio_num = (gpio_num_t)TP_RST,
-        .int_gpio_num = (gpio_num_t)TP_INT,
+        .rst_gpio_num = TP_RST,
+        .int_gpio_num = TP_INT,
         .levels = {
             .reset = 0,
             .interrupt = 0,
