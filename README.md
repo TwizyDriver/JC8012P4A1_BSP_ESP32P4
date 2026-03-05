@@ -118,8 +118,20 @@ GPIO42        | SD_DATA3    | not used in 1-line SD mode, but card's D3 pin must
 By default, this board uses 4 line SD mode, utilizing 6 pins: CLK, CMD, D0 - D3. It is possible to use 1-line mode (CLK, CMD, D0) by changing "SD/MMC bus width". Note that even if card's D3 line is not connected to the ESP chip, it still has to be pulled up, otherwise the card will go into SPI protocol mode.
 
 ## I2C interface
+ESP32-P4 pin    | I2C       | RTC        | ES8311 audio
+----------------|:---------:|------------|--------------
+GPIO7           | I2C_SDA   |   RTC_DAT  | ES_I2C_SDA     
+GPIO8           | I2C_SCL   |   RTC_CLK  | ES_I2C_CLK
 
 ## I2S audio interface
+
+| ESP32-P4 pin  | ES8311 audio     
+| --------------|-------------
+| GPIO13        | CODEC_I2S0_MCLK
+| GPIO12        | CODEC_I2S0_SCLK
+| GPIO11        | CODEC_I2S0_SDOUT
+| GPIO10        | CODEC_I2S0_LRCK
+| GPIO9         | CODEC_I2S0_DSDIN
 
 ## WS2812 on-board RGB led
 
