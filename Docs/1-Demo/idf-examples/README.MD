@@ -20,7 +20,7 @@ idf.py menuconfig
 ```
 After entering the configuration page, configure it according to the following path.
 
-![image 1](pictures\img1.png)
+![image 1](pictures/img1.png)
 
 After configuration, use `idf.py flash monitor` to flash the program. Once flashed, it can be used as a secondary screen via the high-speed USB port.
 
@@ -36,7 +36,7 @@ idf.py set-target esp32p4
 idf.py menuconfig
 ```
 
-![image 2](pictures\img2.png)
+![image 2](pictures/img2.png)
 
 ```
 idf.py build
@@ -45,13 +45,13 @@ idf.py flash monitor
 ```
 If the following is printed:
 
-![image 3](pictures\img3.png)
+![image 3](pictures/img3.png)
 
 Please first check if the board has been selected correctly, and then check if the corresponding code in the image below matches.
 
-![image 4](pictures\img4.png)
+![image 4](pictures/img4.png)
 
-![image 5](pictures\img5.png)
+![image 5](pictures/img5.png)
 
 To update to the latest version, copy the jc1060pa1 folder from this example to the corresponding location. The display and touch libraries are located in the common_components folder in the same directory as xiaozhi-esp32. Please add EXTRA_COMPONENT_DIRS and copy the display and touch library folders to the specified directory. Add the following code to your CMakeLists.txt file:
 ```
@@ -61,6 +61,6 @@ set(EXTRA_COMPONENT_DIRS
 ```
 system_info.cc
 
-![image 6](pictures\img6.png)
+![image 6](pictures/img6.png)
 
 Kconfig.projbuild
