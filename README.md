@@ -133,6 +133,7 @@ GPIO8    | I2C_SCL   |   RTC_CLK  | ES_I2C_CLK   |  14         | 4       | 12   
 | GPIO11   | CODEC_I2S0_SDOUT   |
 | GPIO10   | CODEC_I2S0_LRCK    | I2S_LRCK
 | GPIO9    | CODEC_I2S0_DSDIN   | I2S_DOUT
+Audio Power Amplifier enable pin PA_CTRL connected to GPIO20 P4.
 
 ## WS2812 on-board RGB led
 
