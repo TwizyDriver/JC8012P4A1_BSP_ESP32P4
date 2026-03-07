@@ -12,8 +12,10 @@
 The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-Fi and Bluetooth module of the board. The board also includes a 10.1-inch capacitive touch screen with a resolution of 1280 x 800 and a 2MP camera with MIPI CSI, enriching the user interaction experience. 
 
 ## Device Photos
-![front view](images/device-pic1.jpg)  
-![back view](images/device-pic2.jpg)  
+![device-pic1](https://github.com/user-attachments/assets/9bb3e2f4-a8dc-451a-b127-7c20a3e9ad3f)
+
+![device-pic2](https://github.com/user-attachments/assets/2351ba72-d039-423c-b6a2-ba5a400c0f58)
+
 
 | No. | Description                 | No. | Description                 | No. | Description                 |             
 | :-: | :-------------------------- | :-: | :-------------------------- | :-: | :-------------------------- |
@@ -53,7 +55,8 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 -------------------
 </details>
 
-![diagram](images/diagram.png)  
+<img width="2100" height="1485" alt="diagram" src="https://github.com/user-attachments/assets/557147b5-a78c-4e30-86a1-c3eef9fa98cf" />
+
 
 The board includes an on-board ESP32-C6 module that comes pre-flashed with ESP-Hosted-MCU slave firmware (v0.0.6). This provides Wi-Fi/Bluetooth connectivity to the on-board ESP32-P4, which acts as the host.
 The ESP32-P4 can be used as a host MCU with an on-board ESP32-C6 as co-processor, already connected via SDIO as transport.
