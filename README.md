@@ -58,7 +58,7 @@ The 2.4 GHz Wi-Fi 6 & Bluetooth 5 (LE) module ESP32-C6-MINI-1 serves as the Wi-F
 The board includes an on-board ESP32-C6 module that comes pre-flashed with ESP-Hosted-MCU slave firmware (v0.0.6). This provides Wi-Fi/Bluetooth connectivity to the on-board ESP32-P4, which acts as the host.
 The ESP32-P4 can be used as a host MCU with an on-board ESP32-C6 as co-processor, already connected via SDIO as transport.
 
-[**Click to view full schematic**](Docs & Demos/5-Schematic/README.md)
+[Click to view full schematic](Docs_&_Demos/5-Schematic/README.md)
 
 ## Communication P4 with C6
 [ESP-Hosted-MCU](https://github.com/espressif/esp-hosted-mcu/tree/main) is an open-source solution that allows you to use Espressif  modules (ESP32-C6) as a communication co-processor. This solution provides wireless connectivity (Wi-Fi and Bluetooth) to the host microprocessor (ESP32-P4).
