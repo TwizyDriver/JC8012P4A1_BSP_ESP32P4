@@ -27,8 +27,8 @@ https://github.com/profi-max
 // Your wifi credentials
 wifi_config_t wifi_config = {
     .sta = {
-        .ssid = "ZyXEL2",
-        .password = "mypass12",
+        .ssid = "YOUR_SSID",
+        .password = "YOUR_PASSWORD",
     },
 };
 
