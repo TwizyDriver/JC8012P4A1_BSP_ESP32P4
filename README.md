@@ -141,6 +141,8 @@ Audio Power Amplifier enable pin PA_CTRL connected to GPIO20 P4.
 
 ## WS2812 on-board RGB led
 
+WS2812 on-board RGB LED is wired to GPIO26
+
 ## Battery charge level
 Battery voltage is measured using a **passive resistor divider**:
 
